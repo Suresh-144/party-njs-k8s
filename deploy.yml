@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: the-party-den
+  labels:
+    app: party-den
+spec:
+  replicas: 1 # Using 1 replica because SQLite does not support multiple concurrent writes from different pods
+  selector:
+    matchLabels:
+      app: party-den
+  template:
+    metadata:
+      labels:
+        app: party-den
+    spec:
+      containers:
+      - name: party-den-container
+        image: suresh144/the-party-den:latest
+        ports:
+        - containerPort: 3000
+        env:
+        - name: NODE_ENV
+          value: "production"
+        - name: JWT_SECRET
+          value: "your-very-secure-secret-here" # Change this for security
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
