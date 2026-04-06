@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: party-den-container
-        image: suresh144/the-party-den:latest
+        image: sueesh144/the-party-den:latest
         ports:
         - containerPort: 3000
         env:
