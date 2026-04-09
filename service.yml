@@ -9,4 +9,4 @@ spec:
     - protocol: TCP
       port: 80         # The port the service listens on
       targetPort: 3000 # The port your Node.js app is listening on
-  type: NodePort   # Use LoadBalancer for Cloud (AWS/GCP) or NodePort for local (Minikube)
+  type: Loadbalancer   # Use LoadBalancer for Cloud (AWS/GCP) or NodePort for local (Minikube)
