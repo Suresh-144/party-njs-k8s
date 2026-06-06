@@ -5,7 +5,7 @@ metadata:
   labels:
     app: party-den
 spec:
-  replicas: 1 # Using 1 replica because SQLite does not support multiple concurrent writes from different pods
+  replicas: 3 # Using 1 replica because SQLite does not support multiple concurrent writes from different pods
   selector:
     matchLabels:
       app: party-den
